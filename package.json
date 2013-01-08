@@ -1,0 +1,20 @@
+{
+	"author": {
+		"name": "Folklore",
+		"email": "info@atelierfolklore.ca"
+	},
+	"contributors": [
+		{
+			"name": "David Mongeau-Petitpas",
+			"email": "dmp@atelierfolklore.ca"
+		},
+		{
+			"name": "François Côté",
+			"email": "fc@atelierfolklore.ca"
+		}
+	],
+	"name": "",
+	"version": "0.0.0",
+	"dependencies": {},
+	"devDependencies": {}
+}
