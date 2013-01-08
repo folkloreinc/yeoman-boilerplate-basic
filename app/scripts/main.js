@@ -4,13 +4,11 @@ require.config({
 	},
 
 	paths: {
-		jquery: 'vendor/jquery.min'
+
 	}
 });
 
-require(['jquery'], function($) {
-	
-
+require([], function() {
 
 
 });

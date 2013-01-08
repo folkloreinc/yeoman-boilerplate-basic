@@ -152,6 +152,11 @@ module.exports = function( grunt ) {
       files: ['**/*.html']
     },
 
+    // HTML minification
+    folklore: {
+      files: ['**/*.html']
+    },
+
     // Optimizes JPGs and PNGs (with jpegtran & optipng)
     img: {
       dist: '<config:rev.img>'
@@ -172,6 +177,8 @@ module.exports = function( grunt ) {
       name: 'main'
     },
 
+    pkg: grunt.file.readJSON('package.json'),
+
     // While Yeoman handles concat/min when using
     // usemin blocks, you can still use them manually
     concat: {
@@ -179,7 +186,25 @@ module.exports = function( grunt ) {
     },
 
     min: {
-      dist: ''
+      options: {
+        stripBanners: true,
+        banner: '/*\n\n\n'+
+          'MMMMMMMMMN  :hNMMMMMNd/  yMM       `MMMo .hMMNs. dMM        +dNMMMMMNh-  mMMMMMMMmy`  dMMMMMMMMM\n'+
+          'MMMd        mMMm+++dMMM` yMM       `MMMs NMNy.   dMM       .MMMh+++NMMd  mMMm  oMMMo  dMMN\n'+
+          'MMMdsssso   NMMh   sMMM` yMM       `MMMMMMMh.    dMM       .MMM+   dMMd  mMMmoosMMM+  dMMNdddds\n'+
+          'MMMNddddh   NMMh   sMMM` yMM       `MMMMh MMNy   dMM       .MMM+   dMMd  mMMNmNMMM+   dMMNsssss\n'+
+          'MMMy`````   mMMNsosmMMN` yMMoooooo `MMMs  -mMMh  dMMoooooo .MMMdoosNMMh  mMMd`.yMMN/  dMMM\n'+
+          'NNNs        -ymNNNNNmh:  yNNNNNNNN `NNNo   hNNh  hNNNNNNNN  /hmNNNNNmy.  dNNh  `NNNo  hNNNNNNNNN\n'+
+          '\n\n'+
+          '<%= pkg.name %>\n'+
+          'Author: <%= pkg.author.name %>\n'+
+          'Website: <%= pkg.author.url %>\n'+
+          'Email: <%= pkg.author.email %>\n\n'+
+          'Source Code: <%= pkg.repository.url %>\n'+
+          'Version: <%= pkg.version %>\n'+
+          'Build date: <%= grunt.template.today("yyyy-mm-dd HH:mm") %>\n'+
+          '\n*/\n'
+      }
     }
   });
 
